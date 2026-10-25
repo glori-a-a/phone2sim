@@ -1,0 +1,110 @@
+[
+  {
+    "condition": "nominal",
+    "mode": "replay",
+    "n": 12,
+    "successes": 0,
+    "success_rate": 0.0,
+    "wilson95_low": 0.0,
+    "wilson95_high": 0.2425007574992425,
+    "final_error_mm_mean": 88.94657049707747,
+    "path_completion_mean": 0.3306451612903226,
+    "controller_ms_p50_mean": 0.017808352519447606
+  },
+  {
+    "condition": "nominal",
+    "mode": "geometry",
+    "n": 12,
+    "successes": 12,
+    "success_rate": 1.0,
+    "wilson95_low": 0.7574992425007574,
+    "wilson95_high": 1.0,
+    "final_error_mm_mean": 11.281847457879943,
+    "path_completion_mean": 1.0,
+    "controller_ms_p50_mean": 0.0614666835948204
+  },
+  {
+    "condition": "nominal",
+    "mode": "learned",
+    "n": 12,
+    "successes": 12,
+    "success_rate": 1.0,
+    "wilson95_low": 0.7574992425007574,
+    "wilson95_high": 1.0,
+    "final_error_mm_mean": 7.156886884810329,
+    "path_completion_mean": 1.0,
+    "controller_ms_p50_mean": 3.0612208453627923
+  },
+  {
+    "condition": "impulse",
+    "mode": "replay",
+    "n": 12,
+    "successes": 0,
+    "success_rate": 0.0,
+    "wilson95_low": 0.0,
+    "wilson95_high": 0.2425007574992425,
+    "final_error_mm_mean": 88.05206199499635,
+    "path_completion_mean": 0.3306451612903226,
+    "controller_ms_p50_mean": 0.020641673472709954
+  },
+  {
+    "condition": "impulse",
+    "mode": "geometry",
+    "n": 12,
+    "successes": 12,
+    "success_rate": 1.0,
+    "wilson95_low": 0.7574992425007574,
+    "wilson95_high": 1.0,
+    "final_error_mm_mean": 10.457898001879792,
+    "path_completion_mean": 1.0,
+    "controller_ms_p50_mean": 0.03060000987413029
+  },
+  {
+    "condition": "impulse",
+    "mode": "learned",
+    "n": 12,
+    "successes": 12,
+    "success_rate": 1.0,
+    "wilson95_low": 0.7574992425007574,
+    "wilson95_high": 1.0,
+    "final_error_mm_mean": 6.604283039969384,
+    "path_completion_mean": 1.0,
+    "controller_ms_p50_mean": 0.04452920014349123
+  },
+  {
+    "condition": "friction",
+    "mode": "replay",
+    "n": 12,
+    "successes": 0,
+    "success_rate": 0.0,
+    "wilson95_low": 0.0,
+    "wilson95_high": 0.2425007574992425,
+    "final_error_mm_mean": 76.91670975149488,
+    "path_completion_mean": 0.4112903225806451,
+    "controller_ms_p50_mean": 0.02064581591791163
+  },
+  {
+    "condition": "friction",
+    "mode": "geometry",
+    "n": 12,
+    "successes": 12,
+    "success_rate": 1.0,
+    "wilson95_low": 0.7574992425007574,
+    "wilson95_high": 1.0,
+    "final_error_mm_mean": 10.184504480526979,
+    "path_completion_mean": 1.0,
+    "controller_ms_p50_mean": 0.06900832037596653
+  },
+  {
+    "condition": "friction",
+    "mode": "learned",
+    "n": 12,
+    "successes": 12,
+    "success_rate": 1.0,
+    "wilson95_low": 0.7574992425007574,
+    "wilson95_high": 1.0,
+    "final_error_mm_mean": 8.328635481126703,
+    "path_completion_mean": 1.0,
+    "controller_ms_p50_mean": 5.6129416431455565
+  }
+]

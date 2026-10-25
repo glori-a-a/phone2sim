@@ -1,0 +1,32 @@
+{
+  "learned": {
+    "transitions": 558,
+    "moving_transitions": 204,
+    "mean_uncertainty_mm": 0.6962361705803235,
+    "mean_feature_distance": 0.0893513186109155,
+    "model_mae_mm": 0.5983849340012359,
+    "model_moving_mae_mm": 0.84883874973834,
+    "stationary_mae_mm": 1.2666978980863606,
+    "stationary_moving_mae_mm": 2.8188752550939213,
+    "constant_velocity_mae_mm": 1.0961639457403396,
+    "constant_velocity_moving_mae_mm": 1.7806163538667004,
+    "copy_tool_mae_mm": 0.8883751084392308,
+    "copy_tool_moving_mae_mm": 0.903424416379764,
+    "ten_step_endpoint_mae_mm": 2.025873664273923
+  },
+  "action_shuffled": {
+    "transitions": 558,
+    "moving_transitions": 204,
+    "mean_uncertainty_mm": 1.2665394654957594,
+    "mean_feature_distance": 0.10409682206301707,
+    "model_mae_mm": 1.0145922344484621,
+    "model_moving_mae_mm": 1.5734995383754944,
+    "stationary_mae_mm": 1.2666978980863606,
+    "stationary_moving_mae_mm": 2.8188752550939213,
+    "constant_velocity_mae_mm": 1.0961639457403396,
+    "constant_velocity_moving_mae_mm": 1.7806163538667004,
+    "copy_tool_mae_mm": 0.8883751084392308,
+    "copy_tool_moving_mae_mm": 0.903424416379764,
+    "ten_step_endpoint_mae_mm": 6.170074104968753
+  }
+}

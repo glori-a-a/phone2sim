@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phone2Sim — recorded-data experiment</title><style>body{font:16px/1.6 system-ui;max-width:1100px;margin:40px auto;padding:0 24px;color:#182838;background:#f5f6f8}h1{line-height:1.2}.notice{background:#fff0c2;border-left:5px solid #be7b00;padding:16px}table{border-collapse:collapse;width:100%;background:white;font-size:14px}td,th{text-align:left;padding:10px;border-bottom:1px solid #ddd}video{width:100%;max-width:640px}pre{white-space:pre-wrap;background:white;padding:24px}a{color:#1758a0}</style>
+<h1>Phone2Sim — recorded-data experiment</h1><p class="notice">Uses collector-declared phone recordings; evaluate tracking and provenance before submission.</p><p>Action-conditioned state dynamics from metric object/tool tracks, evaluated on a physical two-joint MuJoCo arm.</p>
+<h2>Simulation results</h2><table><tr><th>Condition</th><th>Method</th><th>Successes</th><th>Rate (95% interval)</th><th>Error mm</th><th>Path</th><th>Control ms</th></tr><tr><td>nominal</td><td>replay</td><td>0/12</td><td>0% (0%–24%)</td><td>88.9</td><td>33%</td><td>0.02</td></tr><tr><td>nominal</td><td>geometry</td><td>12/12</td><td>100% (76%–100%)</td><td>11.3</td><td>100%</td><td>0.06</td></tr><tr><td>nominal</td><td>learned</td><td>12/12</td><td>100% (76%–100%)</td><td>7.2</td><td>100%</td><td>3.06</td></tr><tr><td>impulse</td><td>replay</td><td>0/12</td><td>0% (0%–24%)</td><td>88.1</td><td>33%</td><td>0.02</td></tr><tr><td>impulse</td><td>geometry</td><td>12/12</td><td>100% (76%–100%)</td><td>10.5</td><td>100%</td><td>0.03</td></tr><tr><td>impulse</td><td>learned</td><td>12/12</td><td>100% (76%–100%)</td><td>6.6</td><td>100%</td><td>0.04</td></tr><tr><td>friction</td><td>replay</td><td>0/12</td><td>0% (0%–24%)</td><td>76.9</td><td>41%</td><td>0.02</td></tr><tr><td>friction</td><td>geometry</td><td>12/12</td><td>100% (76%–100%)</td><td>10.2</td><td>100%</td><td>0.07</td></tr><tr><td>friction</td><td>learned</td><td>12/12</td><td>100% (76%–100%)</td><td>8.3</td><td>100%</td><td>5.61</td></tr></table>
+<h2>Example rollouts</h2><h3>replay_impulse.mp4</h3><video controls preload="metadata" poster="replay_preview.png" src="replay_impulse.mp4"></video><h3>geometry_impulse.mp4</h3><video controls preload="metadata" poster="geometry_preview.png" src="geometry_impulse.mp4"></video><h3>learned_impulse.mp4</h3><video controls preload="metadata" poster="learned_preview.png" src="learned_impulse.mp4"></video>
+<h2>Prediction metrics and experimental notes</h2><pre># Phone2Sim — recorded-data experiment
+
+**Uses collector-declared phone recordings; evaluate tracking and provenance before submission.**
+
+## Held-out state prediction
+
+Distances are millimetres. Lower is better. Split unit: source recording/session.
+
+| Model | One-step | Moving samples | 10-step endpoint |
+|---|---:|---:|---:|
+| learned | 0.60 | 0.85 | 2.03 |
+| action_shuffled | 1.01 | 1.57 | 6.17 |
+| stationary | 1.27 | 2.82 | N/A |
+| constant_velocity | 1.10 | 1.78 | N/A |
+| copy_tool | 0.89 | 0.90 | N/A |
+
+## Simulation rollouts
+
+| Condition | Method | Successes | Rate (95% interval) | Final error mm | Path complete | Control ms |
+|---|---|---:|---:|---:|---:|---:|
+| nominal | replay | 0/12 | 0% (0%–24%) | 88.9 | 33% | 0.02 |
+| nominal | geometry | 12/12 | 100% (76%–100%) | 11.3 | 100% | 0.06 |
+| nominal | learned | 12/12 | 100% (76%–100%) | 7.2 | 100% | 3.06 |
+| impulse | replay | 0/12 | 0% (0%–24%) | 88.1 | 33% | 0.02 |
+| impulse | geometry | 12/12 | 100% (76%–100%) | 10.5 | 100% | 0.03 |
+| impulse | learned | 12/12 | 100% (76%–100%) | 6.6 | 100% | 0.04 |
+| friction | replay | 0/12 | 0% (0%–24%) | 76.9 | 41% | 0.02 |
+| friction | geometry | 12/12 | 100% (76%–100%) | 10.2 | 100% | 0.07 |
+| friction | learned | 12/12 | 100% (76%–100%) | 8.3 | 100% | 5.61 |
+
+## Interpretation
+
+Success: final object centre within 25 mm of the endpoint AND at least 95% of sequential path checkpoints reached.
+Replay, geometry and learned controllers receive the same reference and simulator state. Geometry and learned share a hand-coded contact approach planner. Only in-contact action ranking uses learned predictions.
+The impulse adds 0.16 m/s to puck y velocity at 45% of demonstration duration (at least step 15). Friction test changes sliding friction from 0.4 to 0.7.
+Wilson intervals treat rollouts as trials; runs sharing a demonstration are correlated. These are descriptive, not independent-sample significance claims.
+The state world model uses observed tool displacement as a proxy action. Simulator servo commands may not perfectly realize that displacement. Per-rollout servo error is recorded; these experiments do not establish sim-to-real transfer.
+The 10-step metric conditions on observed future tool positions. It is not autonomous video generation or a full planning benchmark.
+Results may favour the geometric baseline; report them without selecting only favourable seeds. Synthetic data come from that baseline and do not establish human-video transfer.
+
+## Reproducibility
+
+Seed: 7; timestep: 0.100s.
+Train source groups: 12; test source groups: 4.
+Exact episode hashes, collector declarations, split IDs and runtime versions: manifest.json.
+
+## Example videos
+
+- [replay_impulse.mp4](replay_impulse.mp4)
+- [geometry_impulse.mp4](geometry_impulse.mp4)
+- [learned_impulse.mp4](learned_impulse.mp4)</pre></html>

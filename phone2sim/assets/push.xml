@@ -1,0 +1,38 @@
+<mujoco model="phone2sim_planar_arm">
+  <compiler angle="radian"/>
+  <option timestep="0.002" integrator="implicitfast" gravity="0 0 -9.81"/>
+  <visual><global offwidth="960" offheight="720"/><headlight diffuse="0.6 0.6 0.6"/></visual>
+  <default>
+    <joint damping="1" armature="0.02"/>
+    <geom friction="0.4 0.005 0.0001" solref="0.01 1"/>
+  </default>
+  <worldbody>
+    <light pos="0 -0.3 1.5" diffuse="0.9 0.9 0.9"/>
+    <camera name="overview" pos="0 -0.55 0.95" xyaxes="1 0 0 0 0.865 0.501"/>
+    <geom name="table" type="plane" size="0.65 0.55 0.01" rgba="0.16 0.20 0.25 1"/>
+    <geom type="cylinder" pos="-0.32 -0.30 0.11" size="0.045 0.11" rgba="0.22 0.26 0.31 1" contype="0" conaffinity="0"/>
+    <body name="upper" pos="-0.32 -0.30 0.23">
+      <joint name="shoulder" type="hinge" axis="0 0 1" limited="true" range="-2.9 2.9"/>
+      <geom type="capsule" fromto="0 0 0 0.4 0 0" size="0.018" density="600" rgba="0.83 0.87 0.91 1" contype="0" conaffinity="0"/>
+      <body name="forearm" pos="0.4 0 0">
+        <joint name="elbow" type="hinge" axis="0 0 1" limited="true" range="0.05 2.9"/>
+        <geom type="capsule" fromto="0 0 0 0.36 0 0" size="0.014" density="600" rgba="0.36 0.61 0.82 1" contype="0" conaffinity="0"/>
+        <body name="tool" pos="0.36 0 0">
+          <geom type="capsule" fromto="0 0 0 0 0 -0.17" size="0.009" rgba="0.36 0.61 0.82 1" contype="0" conaffinity="0"/>
+          <geom name="tip" type="cylinder" pos="0 0 -0.205" size="0.012 0.020" mass="0.05" rgba="0.15 0.55 0.98 1"/>
+          <site name="tip_site" pos="0 0 -0.205" size="0.004"/>
+        </body>
+      </body>
+    </body>
+    <body name="puck" pos="0 0 0.015">
+      <freejoint name="puck_free"/>
+      <geom name="puck_geom" type="cylinder" size="0.025 0.015" mass="0.035" rgba="0.96 0.25 0.21 1"/>
+    </body>
+    <site name="goal" type="cylinder" pos="0.12 0.10 0.001" size="0.03 0.001" rgba="0.26 0.88 0.56 0.45"/>
+  </worldbody>
+  <actuator>
+    <position name="shoulder_servo" joint="shoulder" kp="350" kv="25" forcelimited="true" forcerange="-25 25"/>
+    <position name="elbow_servo" joint="elbow" kp="280" kv="18" forcelimited="true" forcerange="-20 20"/>
+  </actuator>
+</mujoco>
+

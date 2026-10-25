@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phone2sim"
+version = "0.1.0"
+description = "A CPU-scale phone-video world-model experiment for planar robot pushing"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy==2.2.6", "mujoco==3.3.7", "opencv-python==4.12.0.88",
+  "imageio==2.37.0", "imageio-ffmpeg==0.6.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+analysis = ["matplotlib==3.10.7"]
+
+[project.scripts]
+phone2sim = "phone2sim.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["phone2sim*"]
+
+[tool.setuptools.package-data]
+phone2sim = ["assets/*.xml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

@@ -1,0 +1,124 @@
+{
+  "origin": "human_video",
+  "source_collection": "user-confirmed independent recordings",
+  "board_width_m": 0.4,
+  "board_height_m": 0.3,
+  "tool_diameter_m": 0.0235,
+  "object_diameter_m_image_estimate": 0.045,
+  "included": [
+    {
+      "episode": "phone_01",
+      "file": "phone_01.npz",
+      "samples": 182,
+      "interpolated_samples": 0,
+      "max_step_mm": 9.112852192388651
+    },
+    {
+      "episode": "phone_02",
+      "file": "phone_02.npz",
+      "samples": 224,
+      "interpolated_samples": 0,
+      "max_step_mm": 4.399009225842988
+    },
+    {
+      "episode": "phone_03",
+      "file": "phone_03.npz",
+      "samples": 125,
+      "interpolated_samples": 0,
+      "max_step_mm": 10.66996943868121
+    },
+    {
+      "episode": "phone_04",
+      "file": "phone_04.npz",
+      "samples": 119,
+      "interpolated_samples": 2,
+      "max_step_mm": 6.952281194988137
+    },
+    {
+      "episode": "phone_05",
+      "file": "phone_05.npz",
+      "samples": 116,
+      "interpolated_samples": 0,
+      "max_step_mm": 10.025626272115932
+    },
+    {
+      "episode": "phone_06",
+      "file": "phone_06.npz",
+      "samples": 147,
+      "interpolated_samples": 0,
+      "max_step_mm": 9.103901779143408
+    },
+    {
+      "episode": "phone_07",
+      "file": "phone_07.npz",
+      "samples": 90,
+      "interpolated_samples": 0,
+      "max_step_mm": 7.784354935582833
+    },
+    {
+      "episode": "phone_08",
+      "file": "phone_08.npz",
+      "samples": 97,
+      "interpolated_samples": 0,
+      "max_step_mm": 13.842183882990453
+    },
+    {
+      "episode": "phone_09",
+      "file": "phone_09.npz",
+      "samples": 126,
+      "interpolated_samples": 0,
+      "max_step_mm": 11.151941504460911
+    },
+    {
+      "episode": "phone_10",
+      "file": "phone_10.npz",
+      "samples": 90,
+      "interpolated_samples": 0,
+      "max_step_mm": 14.448362299905709
+    },
+    {
+      "episode": "phone_11",
+      "file": "phone_11.npz",
+      "samples": 115,
+      "interpolated_samples": 0,
+      "max_step_mm": 16.985626467041023
+    },
+    {
+      "episode": "phone_12",
+      "file": "phone_12.npz",
+      "samples": 99,
+      "interpolated_samples": 0,
+      "max_step_mm": 11.757042174744287
+    },
+    {
+      "episode": "phone_13",
+      "file": "phone_13.npz",
+      "samples": 113,
+      "interpolated_samples": 0,
+      "max_step_mm": 15.626578374510807
+    },
+    {
+      "episode": "phone_14",
+      "file": "phone_14.npz",
+      "samples": 124,
+      "interpolated_samples": 0,
+      "max_step_mm": 9.479738596727142
+    },
+    {
+      "episode": "phone_15",
+      "file": "phone_15.npz",
+      "samples": 124,
+      "interpolated_samples": 2,
+      "max_step_mm": 9.583227953861096
+    },
+    {
+      "episode": "phone_16",
+      "file": "phone_16.npz",
+      "samples": 169,
+      "interpolated_samples": 0,
+      "max_step_mm": 7.575739418079128
+    }
+  ],
+  "excluded": [],
+  "note": "No synthetic transitions were added. Missing observations are flagged and excluded from prediction learning/scoring."
+}
