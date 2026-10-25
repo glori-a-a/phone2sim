@@ -26,6 +26,8 @@ Both feedback methods succeed on every evaluated case. These counts do not estab
 
 ## Examples and artifacts
 
+[Real recorded pushing example](examples/recorded_push.mp4) · [The same recording with tracking overlay](examples/tracking_push.mp4) · [Recording provenance](examples/README.md)
+
 The same preselected test case is saved for all three methods; failed replay is retained. These videos are simulation, not real-robot footage:
 
 - [Replay failure](runs/real_20261022_v1/replay_impulse.mp4)

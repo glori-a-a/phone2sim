@@ -1,0 +1,20 @@
+{
+  "episode_id": "phone_02",
+  "split": "training demonstration",
+  "collected_at": "2026-10-21T23:00:00",
+  "collected_at_timezone": "not specified by collector",
+  "source_recording_sha256": "2a7565ea2c570a7670fc5c9a8999b6b21384e238a4f46cfb4701c299844d541a",
+  "proxy_sha256": "cb01c84c8f8a8f69f1185d529ace39e619511cb66eb39b0dc66ae717cffdb057",
+  "geometry_sha256": "7a258e5e7c8662adc53ef05c38ceb825374bd3ad6649645b614a2b98ba9b6703",
+  "transform": "Measured-table quadrilateral rectified to a 640x480 view at the tracked 10 Hz timestamps; time preserved; audio excluded. No room-background view is included. Tracking version adds detected centres and trajectories.",
+  "frames": 224,
+  "fps": 10,
+  "board_dimensions_m": [
+    0.4,
+    0.3
+  ],
+  "outputs": {
+    "recorded_push.mp4": "141616f2725cc41a2901922442668899c62ae9d00eee2bfc60812106159f280b",
+    "tracking_push.mp4": "536d13adb4366f10f2d9cdec8b5ac09bfae3bc3c1c3e61c226c0168b3f5e6823"
+  }
+}
